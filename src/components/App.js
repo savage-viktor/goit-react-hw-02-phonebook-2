@@ -20,8 +20,8 @@ class App extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
 
-    const name = event.currentTarget.name.value;
-    const number = event.currentTarget.number.value;
+    const name = event.target.name.value;
+    const number = event.target.number.value;
     const id = nanoid();
 
     let isSameName = false;
@@ -39,11 +39,11 @@ class App extends Component {
         contacts: [...prevState.contacts, { name, number, id }],
       }));
 
-    event.currentTarget.reset();
+    event.target.reset();
   };
 
   handleFilter = (event) => {
-    this.setState({ filter: event.currentTarget.value });
+    this.setState({ filter: event.target.value });
   };
 
   handleDelete = (id) => {
